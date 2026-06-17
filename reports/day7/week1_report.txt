@@ -1,0 +1,29 @@
+============================================================
+RETAILPULSE – WEEK 1 SUMMARY REPORT
+============================================================
+
+Dataset: 805,549 cleaned transactions
+
+Customers: 5,878
+
+Customer Segments:
+  At-Risk Customers: 3,237 customers
+  Occasional Buyers: 1,491 customers
+  Lost Customers: 779 customers
+  Potential Loyalists: 343 customers
+  Loyal Customers: 24 customers
+  VIP Customers: 4 customers
+
+Forecasting Models:
+  Prophet:  MAPE=27.33%, RMSE=14555.2
+  LSTM:     MAPE=26.36%, RMSE=15805.47
+
+Deliverables:
+  ✓ Cleaned Dataset
+  ✓ RFM Features
+  ✓ Customer Segments
+  ✓ Time-Series Analysis
+  ✓ Prophet Forecast
+  ✓ LSTM Forecast
+  ✓ MLflow Experiments
+  ✓ Week-1 Report

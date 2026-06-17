@@ -1,0 +1,166 @@
+======================================================================
+RETAILPULSE – WEEK 2 COMPREHENSIVE REPORT
+Advanced Modeling & Churn Prediction
+======================================================================
+
+----------------------------------------------------------------------
+1. FORECASTING MODELS
+----------------------------------------------------------------------
+
+  Model          MAPE (%)         RMSE          MAE
+  ------------------------------------------------
+  Prophet           27.33     14555.20      8322.83
+  LSTM              26.36     15805.47      8952.24
+  Hybrid            24.08     14797.91      8096.13
+
+  Best Model: Hybrid (MAPE: 24.08%)
+
+----------------------------------------------------------------------
+2. CHURN PREDICTION MODEL
+----------------------------------------------------------------------
+
+  Metric               Value
+  ---------------------------
+  Accuracy            1.0000
+  Precision           1.0000
+  Recall              1.0000
+  F1_Score            1.0000
+  ROC_AUC             1.0000
+
+  ✓ AUC Target Met: 1.0000 ≥ 0.88
+
+  Tuned Hyperparameters (Optuna):
+    max_depth: 10
+    learning_rate: 0.098630
+    n_estimators: 100
+    subsample: 0.853197
+    colsample_bytree: 0.984776
+    min_child_weight: 10
+    gamma: 1.119779
+    reg_alpha: 0.078047
+    reg_lambda: 0.198310
+
+----------------------------------------------------------------------
+3. INVENTORY OPTIMIZATION
+----------------------------------------------------------------------
+  Total products analyzed: 4,631
+  Average Safety Stock: 192 units
+  Average Reorder Point: 214 units
+
+  Top 20 Products by Demand:
+  #    StockCode     Total Demand  Safety Stock  Reorder Pt  Order Qty
+  -----------------------------------------------------------------
+  1    84077              109,169          2328        3364       4399
+  2    85099B              94,983           814        1715       2616
+  3    85123A              93,697           949        1838       2726
+  4    21212               91,263           846        1712       2577
+  5    23843               80,995             0         768       1536
+  6    84879               79,913          1062        1820       2578
+  7    22197               77,971          1444        2184       2923
+  8    23166               77,916         30199       30938      31677
+  9    17003               71,129          3832        4507       5181
+  10   21977               55,270           793        1317       1841
+  11   84991               53,495           604        1111       1619
+  12   22492               44,809           966        1391       1816
+  13   15036               41,078          1011        1401       1790
+  14   84755               39,643           564         940       1316
+  15   21213               38,927           582         951       1320
+  16   20725               38,314           279         642       1006
+  17   22616               38,084          1005        1366       1727
+  18   22178               37,851           467         826       1185
+  19   22386               37,711           421         779       1136
+  20   21915               37,097          1137        1489       1841
+
+----------------------------------------------------------------------
+4. DATA DRIFT DETECTION
+----------------------------------------------------------------------
+
+  Features monitored: 8
+  Features with drift: 2
+
+  Feature                  Drift Score   Drift?
+  ---------------------------------------------
+  Avg_Basket_Size               0.0833       No
+  Avg_Order_Value               0.0766       No
+  Avg_Price                     0.0242       No
+  Frequency                     0.1684    YES ⚠
+  Monetary                      0.0674       No
+  Num_Products                  0.1600    YES ⚠
+  Quantity                      0.0700       No
+  Revenue                       0.0674       No
+
+  Full drift report: reports/day12/drift_report.html
+
+----------------------------------------------------------------------
+5. AUTOMATED RETRAINING PIPELINE
+----------------------------------------------------------------------
+  ✓ Pipeline implemented and tested
+  Script: src/day13_retrain.py
+  Log: reports/day13/pipeline_log.txt
+
+  Pipeline Stages:
+    1. Load Data
+    2. Validate Data
+    3. Clean Data
+    4. Feature Engineering
+    5. Train Model (XGBoost)
+    6. Evaluate Model
+    7. Save & Log to MLflow
+
+----------------------------------------------------------------------
+6. DELIVERABLES VERIFICATION
+----------------------------------------------------------------------
+
+  Models:
+    ✓ prophet_model.pkl                   (Week 1)
+    ✓ lstm_model.pth                      (Week 1)
+    ✓ hybrid_model.pkl                    (Day 8)
+    ✓ churn_model.pkl                     (Day 9)
+    ✓ best_xgboost.pkl                    (Day 11)
+
+  Data:
+    ✓ hybrid_forecast.csv                 (Day 8)
+    ✓ forecast_metrics.csv                (Day 8)
+    ✓ churn_predictions.csv               (Day 9)
+    ✓ churn_metrics.csv                   (Day 9)
+    ✓ inventory_recommendations.csv       (Day 10)
+    ✓ best_params.csv                     (Day 11)
+    ✓ drift_results.csv                   (Day 12)
+
+  Reports:
+    ✓ hybrid_forecast.png                 (Day 8)
+    ✓ metrics_comparison.png              (Day 8)
+    ✓ roc_curve.png                       (Day 9)
+    ✓ confusion_matrix.png                (Day 9)
+    ✓ top20_products.png                  (Day 10)
+    ✓ feature_importance.png              (Day 11)
+    ✓ optuna_optimization.png             (Day 11)
+    ✓ drift_report.html                   (Day 12)
+    ✓ feature_shift_charts.png            (Day 12)
+    ✓ pipeline_log.txt                    (Day 13)
+
+  Total: 22/22 deliverables present
+
+----------------------------------------------------------------------
+7. EVALUATION CRITERIA COVERAGE
+----------------------------------------------------------------------
+
+  Technical Depth & Model Quality:
+    ✓ Hybrid Forecasting (Prophet + LSTM Ensemble)
+    ✓ Churn Prediction (XGBoost with AUC target)
+    ✓ Hyperparameter Tuning (Optuna, 50 trials)
+    ✓ Feature Importance Analysis
+
+  MLOps & Production Readiness:
+    ✓ MLflow Experiment Tracking
+    ✓ Data Drift Detection (Evidently AI)
+    ✓ Automated Retraining Pipeline
+
+  Business Impact:
+    ✓ Inventory Optimization Recommendations
+    ✓ Customer Churn Identification
+    ✓ Demand Forecasting
+
+======================================================================
+END OF WEEK 2 REPORT
+======================================================================
