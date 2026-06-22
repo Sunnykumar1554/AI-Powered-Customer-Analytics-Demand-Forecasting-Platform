@@ -178,7 +178,7 @@ if df_churn is not None:
         st.markdown("#### Feature Importance Profile")
         st.write("Shows which customer behaviors have the most significant impact on predicted churn probability.")
         if os.path.exists(FEAT_IMPORTANCE_IMG):
-            st.image(FEAT_IMPORTANCE_IMG, use_container_width=True)
+            st.image(FEAT_IMPORTANCE_IMG, use_column_width=True)
         else:
             st.info("Feature importance plot not found. Run tuning script to generate.")
             
