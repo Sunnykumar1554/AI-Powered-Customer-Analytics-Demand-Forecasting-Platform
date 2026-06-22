@@ -1,5 +1,7 @@
 # RetailPulse 🛒📊
 
+**[🔗 Live Landing Page](https://retailpulse1554.netlify.app/) | [📊 Live Streamlit Dashboard](https://retailpulse-9q8k.onrender.com/)**
+
 [![Python 3.11](https://img.shields.io/badge/Python-3.11-3776AB?style=flat&logo=python&logoColor=white)](https://python.org)
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.35-FF4B4B?style=flat&logo=streamlit&logoColor=white)](https://streamlit.io)
 [![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?style=flat&logo=docker&logoColor=white)](https://docker.com)
