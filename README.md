@@ -314,7 +314,7 @@ locust -f locustfile.py --host http://localhost:8501
 
 | Service | URL |
 |---------|-----|
-| 📊 **Dashboard** | [retailpulse.streamlit.app](https://retailpulse.streamlit.app) |
+| 📊 **Dashboard** | [retailpulse-9q8k.onrender.com](https://retailpulse-9q8k.onrender.com) |
 | 🌐 **Landing Page** | [retailpulse.netlify.app](https://retailpulse.netlify.app) |
 | 💻 **Repository** | [GitHub](https://github.com/Sunnykumar1554/AI-Powered-Customer-Analytics-Demand-Forecasting-Platform) |
 
