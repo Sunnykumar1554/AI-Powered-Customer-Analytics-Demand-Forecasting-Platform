@@ -1,0 +1,9 @@
+Feature,Drift_Detected,Drift_Score,Stat_Test
+Avg_Basket_Size,False,0.0833,Wasserstein distance (normed)
+Avg_Order_Value,False,0.0766,Wasserstein distance (normed)
+Avg_Price,False,0.0242,Wasserstein distance (normed)
+Frequency,True,0.1684,Wasserstein distance (normed)
+Monetary,False,0.0674,Wasserstein distance (normed)
+Num_Products,True,0.16,Wasserstein distance (normed)
+Quantity,False,0.07,Wasserstein distance (normed)
+Revenue,False,0.0674,Wasserstein distance (normed)
