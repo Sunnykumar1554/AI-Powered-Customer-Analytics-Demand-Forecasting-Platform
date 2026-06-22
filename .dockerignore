@@ -1,0 +1,47 @@
+# Version control
+.git
+.gitignore
+
+# Python
+__pycache__
+*.py[cod]
+*.egg-info
+.venv
+venv
+env
+ENV
+
+# IDE
+.vscode
+.idea
+
+# MLflow runs (large, not needed in container)
+mlruns/
+
+# Temporary files
+temp_pkg/
+*.log
+
+# Documentation & reports (not needed at runtime)
+notebooks/
+reports/
+
+# Docker & Kubernetes
+Dockerfile
+.dockerignore
+k8s/
+
+# Landing page
+landing/
+
+# Tests
+tests/
+
+# CI/CD
+.github/
+
+# Monitoring configs (not needed inside the app container)
+monitoring/
+
+# Load testing
+locustfile.py

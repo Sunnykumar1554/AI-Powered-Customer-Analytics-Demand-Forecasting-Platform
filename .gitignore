@@ -139,3 +139,19 @@ reports/**/*.html
 
 # Temporary packages
 temp_pkg/
+
+# Docker
+docker-compose.override.yml
+
+# Locust reports
+locust_report_*.html
+
+# Landing page build artifacts (keep source)
+landing/node_modules/
+
+# Grafana data (keep dashboard JSON)
+monitoring/grafana-data/
+
+# Test cache
+.pytest_cache/
+tests/__pycache__/

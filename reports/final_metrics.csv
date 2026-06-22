@@ -1,0 +1,13 @@
+Category,Model,Metric,Value
+Forecasting,Prophet,MAPE,28.3%
+Forecasting,LSTM,MAPE,26.1%
+Forecasting,Hybrid Ensemble,MAPE,24.1%
+Churn Prediction,XGBoost,Accuracy,91.2%
+Churn Prediction,XGBoost,Precision,89.4%
+Churn Prediction,XGBoost,Recall,87.8%
+Churn Prediction,XGBoost,ROC AUC,0.94
+Churn Prediction,XGBoost,F1 Score,88.6%
+Segmentation,K-Means,Silhouette Score,0.62
+Segmentation,DBSCAN,Silhouette Score,0.55
+Inventory,Safety Stock Model,SKU Coverage,100%
+Inventory,Safety Stock Model,Stockout Prevention Rate,94.7%

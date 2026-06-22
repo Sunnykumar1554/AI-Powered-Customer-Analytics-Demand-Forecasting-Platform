@@ -1,0 +1,23 @@
+# ── Prometheus Configuration for RetailPulse ──
+# Scrapes application metrics from the Streamlit app's Prometheus endpoint
+
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+  external_labels:
+    project: "retailpulse"
+    environment: "production"
+
+scrape_configs:
+  # RetailPulse Application Metrics
+  - job_name: "retailpulse-app"
+    static_configs:
+      - targets: ["localhost:8000"]
+        labels:
+          instance: "streamlit-dashboard"
+
+  # Optional: Prometheus self-monitoring
+  - job_name: "prometheus"
+    static_configs:
+      - targets: ["localhost:9090"]

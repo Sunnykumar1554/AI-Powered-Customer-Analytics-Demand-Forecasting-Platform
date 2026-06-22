@@ -1,0 +1,75 @@
+# ── RetailPulse Kubernetes Deployment ──
+# Deploys the Streamlit dashboard with 2 replicas for high availability
+
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: retailpulse
+  labels:
+    app: retailpulse
+    version: v1
+    environment: production
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: retailpulse
+
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+
+  template:
+    metadata:
+      labels:
+        app: retailpulse
+        version: v1
+
+    spec:
+      containers:
+        - name: retailpulse
+          image: retailpulse:latest
+          imagePullPolicy: IfNotPresent
+
+          ports:
+            - containerPort: 8501
+              protocol: TCP
+
+          resources:
+            requests:
+              memory: "512Mi"
+              cpu: "250m"
+            limits:
+              memory: "1Gi"
+              cpu: "500m"
+
+          livenessProbe:
+            httpGet:
+              path: /_stcore/health
+              port: 8501
+            initialDelaySeconds: 30
+            periodSeconds: 15
+            timeoutSeconds: 5
+            failureThreshold: 3
+
+          readinessProbe:
+            httpGet:
+              path: /_stcore/health
+              port: 8501
+            initialDelaySeconds: 15
+            periodSeconds: 10
+            timeoutSeconds: 5
+            failureThreshold: 3
+
+          env:
+            - name: STREAMLIT_SERVER_PORT
+              value: "8501"
+            - name: STREAMLIT_SERVER_ADDRESS
+              value: "0.0.0.0"
+            - name: STREAMLIT_SERVER_HEADLESS
+              value: "true"
