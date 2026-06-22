@@ -1,0 +1,28 @@
+# ── Netlify Configuration ──
+# Deploys the landing/ directory as a static site
+
+[build]
+  # Publish the landing directory as the site root
+  publish = "landing/"
+  # No build command needed — it's pure HTML/CSS/JS
+  command = "echo 'Static site — no build needed'"
+
+# Redirect rules
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Custom headers for performance & security
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "/style.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
