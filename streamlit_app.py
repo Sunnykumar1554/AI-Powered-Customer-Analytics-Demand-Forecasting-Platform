@@ -14,11 +14,8 @@ st.set_page_config(
 )
 
 # ── Dynamic Path Resolution ──
-current_dir = os.path.dirname(os.path.abspath(__file__))
-if os.path.basename(current_dir) in ["pages", "src"]:
-    ROOT_DIR = os.path.abspath(os.path.join(current_dir, ".."))
-else:
-    ROOT_DIR = current_dir
+# Since streamlit_app.py is always in the root directory:
+ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 CLEANED_DATA_PATH = os.path.join(ROOT_DIR, "data", "processed", "day2", "cleaned_dataset.csv")
 CHURN_DATA_PATH = os.path.join(ROOT_DIR, "data", "processed", "day9", "churn_predictions.csv")
