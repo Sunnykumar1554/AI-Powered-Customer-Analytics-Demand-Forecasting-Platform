@@ -124,22 +124,7 @@ models/best_xgboost.pkl
 
 # Large Datasets
 data/raw/
-data/processed/**/*.csv
-data/processed/*.csv
-!data/processed/day2/cleaned_dataset.csv
-!data/processed/day3/customer_segments.csv
-!data/processed/day4/daily_sales.csv
-!data/processed/day5/prophet_forecast.csv
-!data/processed/day5/prophet_metrics.csv
-!data/processed/day6/lstm_forecast.csv
-!data/processed/day6/lstm_metrics.csv
-!data/processed/day8/hybrid_forecast.csv
-!data/processed/day8/forecast_metrics.csv
-!data/processed/day9/churn_predictions.csv
-!data/processed/day9/churn_metrics.csv
-!data/processed/day10/inventory_recommendations.csv
-!data/processed/day11/best_params.csv
-!data/processed/day12/drift_results.csv
+!data/processed/**
 
 # Streamlit config/cache
 .streamlit/
