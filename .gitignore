@@ -126,6 +126,7 @@ models/best_xgboost.pkl
 data/raw/
 data/processed/**/*.csv
 data/processed/*.csv
+!data/processed/day2/cleaned_dataset.csv
 !data/processed/day3/customer_segments.csv
 !data/processed/day4/daily_sales.csv
 !data/processed/day5/prophet_forecast.csv
