@@ -305,7 +305,7 @@ with col_right:
             values="Count", 
             names="Segment", 
             hole=0.4,
-            color_discrete_sequence=px.colors.sequential.Ales,
+            color_discrete_sequence=px.colors.qualitative.Pastel,
             template="plotly_dark"
         )
         fig_seg.update_layout(
